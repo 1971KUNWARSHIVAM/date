@@ -4,179 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Go Out With Me</title>
-    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Love+Light&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" crossorigin="anonymous">
-
-    <style>
-        /* General styling for the entire page */
-        body {
-            font-family: "Quintessential", cursive;
-            background-color: #adb9e3;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .main {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            padding: 20px;
-            max-width: 600px;
-            width: 100%;
-        }
-
-        h1 {
-            font-size: clamp(2rem, 3vw, 4rem);
-            line-height: 1.2;
-        }
-
-        h2 {
-            font-family: "Unkempt", cursive;
-            font-size: clamp(1.5rem, 2.5vw, 3rem);
-        }
-
-        img {
-            height: 150px;
-            width: 150px;
-            object-fit: contain;
-            border-radius: 50%;
-            border: 5px solid white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 1.1rem;
-            border-radius: 15px;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-
-        button:hover {
-            transform: scale(1.1);
-        }
-
-        .yes {
-            background-color: #6bd46b !important;
-            color: white;
-        }
-
-        .no {
-            background-color: #ff4d6d !important;
-            color: white;
-        }
-
-        /* Fullscreen takeover styles for the final message */
-        .fullscreen-yes {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            font-size: clamp(2rem, 5vw, 4rem) !important;
-            border-radius: 0;
-            z-index: 9999;
-            transition: all 0.5s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            color: #fff;
-            background-color: #6bd46b !important;
-            font-family: "Unkempt", cursive;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Styles for falling hearts animation */
-        .heart {
-            position: fixed;
-            top: -10px;
-            font-size: 2rem;
-            animation: fall 3s linear forwards;
-            z-index: 10000;
-        }
-
-        @keyframes fall {
-            to {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="Garba Date.css">
 </head>
 <body>
     <div class="container main">
         <h1>Will you go out with me, on this year's Navratri, as my <i><br>garba date</i>?</h1>
-        <img src="https://placehold.co/150x150/d3a5a5/ffffff?text=Pookie" alt="pookie picture">
+        <br>
+        <br>
+        <br>
+        <!-- <h2><i>Pretty please!!</i></h2> -->
+        <img src="pookie animated.jpg" alt="pookie picture">
         <p><h2><i>Pretty please!!</i></h2></p>
+        <br>
+        <br>
         <div class="button-container">
             <button class="yes btn-success" id="yup">Yeah Sure!!</button>
             <button class="no btn-danger" id="nope">Hell Naw!!</button>
         </div>
     </div>
-
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Get the buttons
-        const yesBtn = document.getElementById("yup");
-
-        // Event listener for the "Yes" button
-        yesBtn.addEventListener("click", () => {
-            // Get the main container and remove content
-            const mainContainer = document.querySelector(".main");
-            mainContainer.innerHTML = '';
-            
-            // Get the body and prepare for the fullscreen message
-            const body = document.querySelector("body");
-            body.style.backgroundColor = 'transparent';
-
-            // Create the new h2 element for the fullscreen message
-            const h2 = document.createElement("h2");
-            h2.classList.add("fullscreen-yes");
-            h2.innerText = "YAY! 💖 We're going on a Garba Date! 🪔✨";
-            body.appendChild(h2);
-
-            // Confetti hearts
-            for (let i = 0; i < 30; i++) {
-                createHeart();
-            }
-        });
-
-        // Function to create falling hearts
-        function createHeart() {
-            const heart = document.createElement("div");
-            heart.classList.add("heart");
-            heart.textContent = "💖";
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.animationDuration = 2 + Math.random() * 3 + "s"; // 2-5s fall
-            document.body.appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
-        }
-    </script>
+    <script src="Garba Date.js"></script>
 </body>
 </html>
