@@ -1,111 +1,41 @@
-*{
-    font-family:"Quintessential", cursive;
-    background-color: #adb9e3/*#a379c9*//*rgb(225, 133, 91)*/;
+* {
+  font-family: "Quintessential", cursive;
+  background-color: #adb9e3;
 }
-h1, h2{
-    /* text-decoration: underline azure; */
-    font-size: clamp(2rem, 3vw, 4rem);
-    /* color: #9ad5ca; */
-    /* font-family:"Rubik Iso"; */
+
+h1, h2 {
+  font-size: clamp(2rem, 3vw, 4rem);
 }
-.main{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    /* background-color: pink; */
-}
-img{
-    height: 100px;
-    width: 100px;
-    background-size: cover;
-    background-image: url("pookie animated.jpg");
-    display: block;
-}
-.love-light-regular {
-  font-family: "Love Light", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-.rubik-iso-regular {
-  font-family: "Rubik Iso", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-.quintessential-regular {
-  font-family: "Quintessential", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-.unkempt-regular {
-  font-family: "Unkempt", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-.unkempt-bold {
-  font-family: "Unkempt", cursive;
-  font-weight: 700;
-  font-style: normal;
-}
-button {
-  padding: 10px 20px;
-  font-size: 1.1rem;
-  border-radius: 15px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-button:hover {
-  transform: scale(1.1);
-}
-.yes {
-  background-color: #6bd46b !important;
-  color: white;
-}
-.no {
-  background-color: #ff4d6d !important;
-  color: white;
-  /* position: absolute; needed if you want it to move around */
-}
-/*
-.button-container {
+
+.main {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;      
-  gap: 20px;                 
-  margin-top: 20px;
+  align-content: center;
+  text-align: center;
 }
-button {
-  padding: 10px 20px;
-  font-size: 1.1rem;
-  border-radius: 15px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+
+img {
+  height: 100px;
+  width: 100px;
+  background-size: cover;
+  background-image: url("pookie animated.jpg");
+  display: block;
 }
-.yes {
-  background-color: #6bd46b !important;
-  color: white;
-}
-.no {
-  background-color: #ff4d6d !important;
-  color: white;
-} */
+
 .button-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;   /* keep both centered overall */
+  justify-content: center;
   align-items: center;
-  gap: 20px;                 /* base spacing */
+  gap: 20px;
   margin-top: 20px;
-  width: 80%;                /* so flex pushing has room */
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* General button styles */
 button {
   padding: 10px 20px;
   font-size: 1.1rem;
@@ -118,8 +48,8 @@ button {
 .yes {
   background-color: #6bd46b !important;
   color: white;
-  flex-shrink: 0; /* don’t let it shrink */
-  transform-origin: center center;  /* grow from center */
+  flex-shrink: 0;
+  transform-origin: center center;
 }
 
 .no {
@@ -127,7 +57,7 @@ button {
   color: white;
   flex-shrink: 0;
 }
-/* Fullscreen takeover */
+
 .fullscreen-yes {
   position: fixed !important;
   top: 0;
@@ -140,7 +70,6 @@ button {
   transition: all 0.5s ease;
 }
 
-/* Falling hearts */
 .heart {
   position: fixed;
   top: -10px;
@@ -155,23 +84,7 @@ button {
     opacity: 0;
   }
 }
-body{
+
+body {
   width: 290px;
-
 }
-
-.heart {
-  position: absolute;
-  top: -50px;
-  font-size: 2rem;
-  animation: fall linear forwards;
-  z-index: 999;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(100vh);
-    opacity: 0;
-  }
-}
-
