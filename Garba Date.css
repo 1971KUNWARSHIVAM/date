@@ -161,7 +161,11 @@ body{
 }
 
 .heart {
+  position: absolute;
+  top: -50px;
+  font-size: 2rem;
   animation: fall linear forwards;
+  z-index: 999;
 }
 
 @keyframes fall {
@@ -170,3 +174,4 @@ body{
     opacity: 0;
   }
 }
+
